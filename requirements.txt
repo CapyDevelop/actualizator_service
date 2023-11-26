@@ -1,0 +1,3 @@
+python-dotenv==1.0.0
+school-service-grpc @ git+https://github.com/alexseipopov/capybaras_school_service_grpc.git@main
+git+https://github.com/alexseipopov/capybaras_coalition_grpc.git@main
