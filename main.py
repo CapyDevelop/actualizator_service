@@ -1,14 +1,13 @@
-import os
-import grpc
-import pika
 import json
+import os
 
-from dotenv import load_dotenv
-
-import school_service.school_service_pb2 as school_pb2
-import school_service.school_service_pb2_grpc as school_pb2_grpc
 import coalition_service.coalition_service_pb2 as coalition_service_pb2
 import coalition_service.coalition_service_pb2_grpc as coalition_service_pb2_grpc
+import grpc
+import pika
+import school_service.school_service_pb2 as school_pb2
+import school_service.school_service_pb2_grpc as school_pb2_grpc
+from dotenv import load_dotenv
 
 load_dotenv()
 school_service_channel = grpc.insecure_channel(f'{os.getenv("SCHOOL_SERVICE_HOST")}:{os.getenv("SCHOOL_SERVICE_PORT")}')
@@ -22,7 +21,7 @@ CURRENT_COUNT = 774
 LIMIT = 10
 
 credentials = pika.PlainCredentials(username=os.getenv("RABBITMQ_USERNAME"), password=os.getenv("RABBITMQ_PASSWORD"))
-connection = pika.BlockingConnection(pika.ConnectionParameters(os.getenv("RABBITMQ_HOST"), port=os.getenv("RABBITMQ_PORT") , credentials=credentials))
+connection = pika.BlockingConnection(pika.ConnectionParameters(os.getenv("RABBITMQ_HOST"), port=os.getenv("RABBITMQ_PORT"), credentials=credentials))
 channel = connection.channel()
 channel.queue_declare(queue='actualizator_queue')
 
