@@ -17,7 +17,7 @@ coalition_channel = grpc.insecure_channel(f'{os.getenv("COALITION_SERVICE_HOST")
 coalition_stub = coalition_service_pb2_grpc.CoalitionServiceStub(coalition_channel)
 
 
-CURRENT_COUNT = 774
+CURRENT_COUNT = 853
 LIMIT = 10
 
 credentials = pika.PlainCredentials(username=os.getenv("RABBITMQ_USERNAME"), password=os.getenv("RABBITMQ_PASSWORD"))
