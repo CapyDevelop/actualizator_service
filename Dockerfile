@@ -8,6 +8,6 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 COPY . .
-COPY .env_docker .env
+#COPY .env_docker .env
 
 CMD ["python", "main.py"]
