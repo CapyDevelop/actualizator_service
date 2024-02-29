@@ -32,7 +32,7 @@ def get_school_info():
     datas = [
         (os.getenv("USERNAME"), os.getenv("PASSWORD"), "Capybara"),
         (os.getenv("USERNAME_HONEYBADGERS"), os.getenv("PASSWORD_HONEYBADGERS"), "Honeybadger"),
-        # (os.getenv("USERNAME_SALAMANDERS"), os.getenv("PASSWORD_SALAMANDERS"), "Salamandra"),
+        (os.getenv("USERNAME_SALAMANDERS"), os.getenv("PASSWORD_SALAMANDERS"), "Salamandra"),
         (os.getenv("USERNAME_ALPACAS"), os.getenv("PASSWORD_ALPACAS"), "Alpaca")
     ]
     for data in datas:
